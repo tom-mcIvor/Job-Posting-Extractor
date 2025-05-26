@@ -11,5 +11,24 @@ See README.md for detailed step-by-step instructions.
 """
 
 # TODO: Add your imports here
+from pydantic import BaseModel, Field
+from typing import Optional, List
 
 # TODO: Create your JobPosting class here
+class JobPosting(BaseModel):
+    """A simple job posting model for structured output extraction"""
+
+    title: str = Field(..., description="Job title")
+    company: str = Field(..., description="Company name")
+    location: str = Field(..., description="Job location")
+    job_type: Optional[str] = Field(
+        None,
+        description="Employment type (full-time, part-time, contract, etc.)",
+    )
+    summary: str = Field(..., description="Brief summary of the job")
+    requirements: List[str] = Field(
+        default_factory=list, description="Key job requirements"
+    )
+    salary_range: Optional[str] = Field(
+        None, description="Salary range if mentioned"
+    )
