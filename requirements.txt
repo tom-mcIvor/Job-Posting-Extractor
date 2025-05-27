@@ -1,0 +1,3 @@
+python-dotenv==1.0.1
+langchain-google-genai==0.0.11
+langchain-core==0.1.27 
