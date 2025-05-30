@@ -70,3 +70,5 @@ if __name__ == "__main__":
     test_text = "Software Engineer at TechCorp in SF. Full-time, $100k."
     result = extract_job_posting(test_text)
     print(result.model_dump())
+    
+    #test with sample data
